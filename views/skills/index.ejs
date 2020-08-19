@@ -1,0 +1,23 @@
+
+<%- include('./tmp/header') -%>/<div id="myskills">
+    <div class="top">Skill</div>
+    <div class="top">Experience</div>
+    <div class="top">Completed Projects</div>
+    <div class="top">Last Used In</div>
+    <div class="topIcon">&nbsp;</i></div>
+  </div>
+
+        <% skills.forEach(function(t) { %>
+          
+            <div id="myskills">
+                <div><a href="/skills/<%= t.id %>"><b><%= t.skill %></b></a></div>
+                <div class="years"><%= t.years %> Years</div>
+                <div class="project"><%= t.project %></div>
+                <div class="project"><%= t.lastUsed %></div>
+                <div class="icon"><i class="<%= t.icon %>"></i></div>
+              </div>
+
+        <% }); %>
+ 
+
+<%- include('./tmp/footer') -%>

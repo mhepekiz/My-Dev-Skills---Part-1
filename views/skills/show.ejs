@@ -1,0 +1,25 @@
+<%- include('./tmp/header') -%>
+
+   
+
+        <div id="myskills">
+            <div>Skill : <%= skill.skill %></div>
+          </div>
+          <div id="myskills">
+            <div>Experience : <%= skill.years %> Years Experience</div>
+          </div>
+          <div id="myskills">
+            <div>Completed Projects : <%= skill.project %> </div>
+          </div>
+          <div id="myskills">
+            <div>Sample Link : <a href="<%= skill.sample %>" target="_blank"><%= skill.sample %></a></div>
+          </div>
+          <div id="myskills">
+            <div>Contact : <a href="mailto:mhepekiz@protonmail.com" target="_blank">Send An Email</a> about <%= skill.skill %></div>
+          </div>
+          <div id="myskills"></div>
+            <div class="backto"><button onClick="javascript:history.go(-1)">BACK TO MAIN PAGE</button></div>
+          </div>
+
+
+<%- include('./tmp/footer') -%>
