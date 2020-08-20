@@ -1,23 +1,41 @@
 
-<%- include('./tmp/header') -%>/<div id="myskills">
-    <div class="top">Skill</div>
+<%- include('./tmp/header') -%>
+
+<div id="myskills">
+
+  <div class="topDel"><img src="https://www.pngfind.com/pngs/m/275-2755033_edit-png-file-on-phone-svg-edit-icon.png" width="10px" height="auto"></div>
+  <div class="top">Skill</div>
     <div class="top">Experience</div>
     <div class="top">Completed Projects</div>
     <div class="top">Last Used In</div>
     <div class="topIcon">&nbsp;</i></div>
+    <div class="topDel"><img src="https://www.clipartmax.com/png/small/219-2194818_trash-can-vector-trash-can-icon-png.png" width="10px" height="auto"></div>
   </div>
 
         <% skills.forEach(function(t) { %>
           
             <div id="myskills">
+                 <div class="delete"><img src="https://www.pngfind.com/pngs/m/275-2755033_edit-png-file-on-phone-svg-edit-icon.png" width="10px" height="auto"></a></div>
                 <div><a href="/skills/<%= t.id %>"><b><%= t.skill %></b></a></div>
-                <div class="years"><%= t.years %> Years</div>
+                <div class="years"><%= t.years %> <% if(t.years > 1){ %> Years <% } else { %>Year <% } %></div>
                 <div class="project"><%= t.project %></div>
                 <div class="project"><%= t.lastUsed %></div>
                 <div class="icon"><i class="<%= t.icon %>"></i></div>
+                <!-- <div class="delete"><a href="/skills/<%= t.id %>?_method=DELETE"><img src="https://www.clipartmax.com/png/small/219-2194818_trash-can-vector-trash-can-icon-png.png" width="10px" height="auto"></a></div> -->
+                <div><form action="/skills/<%= t.id %>?_method=DELETE" method="POST"><input type="image" src="https://www.clipartmax.com/png/small/219-2194818_trash-can-vector-trash-can-icon-png.png" alt="Submit" width="10px" height="10px"></form></div>
+                
+                <!-- <div class="delete"> <form action="/skills/<%= t.id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <button type="submit" class="deleteBtn">X</button>
+                </form></div> -->
               </div>
 
         <% }); %>
  
+        <div id="myskills"></div>
+        <div class="backto"><a href="/skills/new"><button>ADD NEW SKILL</button></a> <button>SHOW ALL</button> <button>MORE THAN 1 YEAR EXP.</button></div>
+      </div>
+
 
 <%- include('./tmp/footer') -%>
