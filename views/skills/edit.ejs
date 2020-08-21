@@ -1,0 +1,82 @@
+
+<%- include('./tmp/header') -%>
+
+<h1>Edit Skill</h1>
+
+<form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
+    <ul>
+     <li>
+       <label for="skill">Skill:</label>
+       <input type="text" id="skill" name="skill" value="<%= skill.skill %>" required>
+     </li>
+     <li>
+      <label for="icon">Icon Path:</label>
+      <input type="text" id="icon" value="<%= skill.icon %>" name="icon">
+      <br><span class="devicon">You can find your icon at <a href="https://devicons.github.io/devicon/" target="_blank">https://devicons.github.io/devicon/</a></span>
+    </li>
+     <li>
+       <label for="years">Experience:</label>
+       <select name="years" id="years">
+        <option selected value="<%=skill.years%>"><%=skill.years%></option>   
+        <option value="<1">< 1 Year</option>
+        <option value="1">1 Year</option>
+        <option value="2">2 Years</option>
+        <option value="3">3 Years</option>
+        <option value="4">4 Years</option>
+        <option value="5">5 Years</option>
+        <option value="6">6 Years</option>
+        <option value="7">7 Years</option>
+        <option value="8">8 Years</option>
+        <option value="9">9 Years</option>
+        <option value="11">10 Years</option>
+        <option value="11">10+ Years</option>
+      </select>
+     </li>
+     <li>
+       <label for="project">Completed Project:</label>
+       <select name="project" id="project">
+         <option selected value="<%=skill.project%>"><%=skill.project%></option>
+         <option value="Yes">Yes</option>
+         <option value="No">No</option>
+       </select>
+     </li>
+     <li>
+      <label for="lastUsed">Last Used:</label>
+      <select name="lastUsed" id="lastUsed">
+       <option selected value="<%=skill.lastUsed%>"><%=skill.lastUsed%></option>   
+       <option value="2020">2020</option>
+       <option value="2019">2019</option>
+       <option value="2018">2018</option>
+       <option value="2017">2017</option>
+       <option value="2016">2016</option>
+       <option value="2015">2015</option>
+       <option value="2014">2014</option>
+       <option value="2013">2013</option>
+       <option value="2012">2012</option>
+       <option value="2011">2011</option>
+       <option value="2010">2010</option>
+     </select>
+    </li>
+    <li>
+      <label for="sample">Sample Link:</label>
+      <input type="text" id="sample" name="sample" value="<%= skill.sample %>" required>
+    </li>
+    <li>
+     <button>Update Skill</button>
+    </li>
+    </ul>
+   </form>
+  
+  
+  
+  
+    <div class="newData"> Edit skill and click "Update Skill" button to continue </div>
+
+
+
+    
+
+
+<%- include('./tmp/footer') -%>
+
+

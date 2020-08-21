@@ -14,8 +14,16 @@ module.exports = {
   getAll,
   getOne,
   create,
-  deleteOne
+  deleteOne,
+  update
 };
+
+function update(id, updatedSkill) {
+  const skill = skills.find(t => t.id === parseInt(id));
+  Object.assign(skill, updatedSkill);
+}
+
+
 
 function getAll() {
   return skills;
@@ -28,7 +36,6 @@ function deleteOne(skillId) {
 
 function create(skill) {
   skill.id = Date.now() % 10000;
-  skill.done = false;
   skills.push(skill);
 }
 

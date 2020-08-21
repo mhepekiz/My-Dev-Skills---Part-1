@@ -7,9 +7,20 @@ var Skill = require('../models/skill');
     show,
     new: newSkill,
     create,
-    delete: deleteSkill
+    delete: deleteSkill,
+    edit,
+    update
 }
 
+function update(req, res) {
+  Skill.update(req.params.id, req.body);
+  res.redirect(`/skills`);
+}
+
+function edit(req, res) {
+  const skill = Skill.getOne(req.params.id);
+  res.render('skills/edit', { skill });
+}
 
 function deleteSkill(req, res) {
   Skill.deleteOne(req.params.id);
@@ -18,9 +29,7 @@ function deleteSkill(req, res) {
 
 function create(req, res) {
   console.log("req.body", req.body);
-  // The model is responsible for CRUD'ing data
   Skill.create(req.body);
-  // Do a redirect anytime data is changed
   res.redirect('/skills');
 }
 
