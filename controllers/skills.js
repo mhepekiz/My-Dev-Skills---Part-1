@@ -14,7 +14,7 @@ var Skill = require('../models/skill');
 
 function update(req, res) {
   Skill.update(req.params.id, req.body);
-  res.redirect(`/skills`);
+  res.redirect(`/skills/${req.params.id}`);
 }
 
 function edit(req, res) {
